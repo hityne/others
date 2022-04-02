@@ -98,7 +98,7 @@ if [ "$main_no" = "1" ]; then
 
 		yum install -y curl
 		bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
-		wget https://github.com/hityne/centos/raw/ur/config.json  -O -> /usr/local/etc/v2ray/config.json
+		wget https://raw.githubusercontent.com/hityne/others/main/config.json  -O -> /usr/local/etc/v2ray/config.json
 
 		userid=$(cat /proc/sys/kernel/random/uuid)
 		sed -i "8s/7966c347-b5f5-46a0-b720-ef2d76e1836a/$userid/" /usr/local/etc/v2ray/config.json
@@ -114,7 +114,7 @@ if [ "$main_no" = "1" ]; then
 
 		yum install -y curl
 		bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
-		wget https://github.com/hityne/centos/raw/ur/config2.json  -O -> /usr/local/etc/v2ray/config.json
+		wget https://raw.githubusercontent.com/hityne/others/main/config2.json -O -> /usr/local/etc/v2ray/config.json
 
 		read -p "请输入你的域名: " urdomain
 		[ "$urdomain" == "" ] && read -p "请输入你的域名：" urdomain
@@ -137,7 +137,7 @@ if [ "$main_no" = "1" ]; then
 	echo "*******************"
 	echo "请开通端口 $port"
 	echo "请为$urdomain申请SSL认证"
-	wget https://raw.githubusercontent.com/hityne/centos/ur/site.config  -O -> /usr/local/etc/v2ray/site.config
+	wget https://raw.githubusercontent.com/hityne/others/main/site.config  -O -> /usr/local/etc/v2ray/site.config
 	echo "网站配置文件添加以下内容(/usr/local/etc/v2ray/site.config)："
 	cat /usr/local/etc/v2ray/site.config
 	echo "*******************"
@@ -200,7 +200,7 @@ elif [ "$main_no" = "5" ]; then
 	if [ "$v2ray_no" = "1" ]; then
 
 		mkdir -p /usr/local/etc/v2ray
-		wget https://github.com/hityne/centos/raw/ur/config.json  -O -> /usr/local/etc/v2ray/config.json
+		wget https://raw.githubusercontent.com/hityne/others/main/config.json  -O -> /usr/local/etc/v2ray/config.json
 
 		userid=$(cat /proc/sys/kernel/random/uuid)
 		sed -i "8s/7966c347-b5f5-46a0-b720-ef2d76e1836a/$userid/" /usr/local/etc/v2ray/config.json
@@ -218,7 +218,7 @@ elif [ "$main_no" = "5" ]; then
 	elif [ "$v2ray_no" = "2" ]; then
 
 		mkdir -p /usr/local/etc/v2ray
-		wget https://github.com/hityne/centos/raw/ur/config2.json  -O -> /usr/local/etc/v2ray/config.json
+		wget https://raw.githubusercontent.com/hityne/others/main/config2.json  -O -> /usr/local/etc/v2ray/config.json
 		
 		sed -i "5s/127.0.0.1/0.0.0.0/" /usr/local/etc/v2ray/config.json
 
@@ -245,7 +245,7 @@ elif [ "$main_no" = "5" ]; then
 		echo "*******************"
 		echo "请开通端口 $port"
 		echo "请为$urdomain申请SSL认证"
-		wget https://github.com/hityne/centos/raw/ur/site.config  -O -> /usr/local/etc/v2ray/site.config
+		wget https://raw.githubusercontent.com/hityne/others/main/site.config -O -> /usr/local/etc/v2ray/site.config
 		echo "网站配置文件添加以下内容(/usr/local/etc/v2ray/site.config)："
 		cat /usr/local/etc/v2ray/site.config
 		echo "*******************"
